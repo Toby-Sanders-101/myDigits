@@ -22,9 +22,9 @@ while True:
 	ctime = time.time()
 	bigIm = cv2.putText(bigIm,"FPS: "+str(int(1/(ctime-ptime))),(75,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255, 0, 0),2,cv2.LINE_AA) #output the current fps (frames per second)
 	cv2.imshow('Imagetest',bigIm) #output the normal sized image
-	k = cv2.waitKey(1) #returns -1 if a key is pressed
+	k = cv2.waitKey(1) #doesn't return -1 if a key is pressed
 	if k != -1:
- 		print(len(image),'x',len(image[0])) #output the dimensions of the image
+ 		print(len(image),'x',len(image[0])) #output the dimensions of the image. my dimensions are naturally 480x640 but is cropped to 480x320 and then shrunk to 40x27
  		print(image) #output the image itself
 		inp = pyautogui.confirm(text=str(count)+" already taken",title="Keep?",buttons=["Yes","No","Quit"]) #creates a pop-upbox with three options
 		if inp=="Yes": #this saves the image as a string in the file opened at the beginning

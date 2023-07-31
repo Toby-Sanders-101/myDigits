@@ -6,8 +6,6 @@ import os
 import sys
 np.set_printoptions(linewidth=np.inf)
 
-n_layers = 3
-
 def getQD(size): #key for retrieving quality drop
 	qdDict = {"40x27":12}
 	qd = qdDict[size]
@@ -23,6 +21,7 @@ def shrinkData(inp,size): #reduces data size and quality
 	
 def readParams(size): #reads the parameters saved in a file
 	layers = {}
+	n_layers = 3
 	f = open("myParameters_"+size+".txt","r")
 	for l in range(n_layers*2):
 		arrarr = []

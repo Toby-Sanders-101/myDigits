@@ -31,6 +31,8 @@ PyAutoGUI==0.9.54
 These modules can all be installed using `pip install (module)` in the terminal
 
 ## Usage
-1. In order to use this repository, you must first clone it.
+1. In order to use this repository, you must first clone it. You can use `gh repo clone Toby-Sanders-101/myDigits` in the terminal to do this
 
 1. Then, assuming all modules and subsidiaries are installed correctly, you should confirm that your camera works sufficiently. You can run *dataMaker.py* with lines: 15, 30-37 and 44 commented out to do this. This will also output your camera dimensions.
+
+1. Next, choose what 'quality drop' you would like to use and change lines 

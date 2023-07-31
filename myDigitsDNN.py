@@ -13,7 +13,7 @@ X_train,y_train,Y_train_,x_test,y_test = hlp.readDigits(size=size,outRange=10,te
 	#outRange is the number of unique possible outputs. There are 10 digits so my range would be 10 however this may need altering if you want to change what content the program reads
 
 if size == "120x80":
-	layers_dims=[9600,120,40,10] #these are the number of neurons in each layer of the network. The fist layer must contain the number of pixels in the input...
+	layers_dims=[9600,120,40,10] #these are the number of neurons in each layer of the network. The first layer must contain the number of pixels in the input images...
 elif size == "40x27":
 	layers_dims=[1080,120,40,10] #...therefore with different dimensions, it is different. The last layer must be the outRange (mentioned above)
 
@@ -191,15 +191,14 @@ def L_layer_model(X, Y, layers_dims, learning_rate=0.01, num_iterations, print_c
 			costs.append(cost)
 	print()
 	plt.plot(squeeze(costs))
-	plt.ylabel('cost')
-	plt.xlabel('iterations (per hundreds)')
-	plt.title("Learning rate =" + str(learning_rate))
+	plt.ylabel('Cost')
+	plt.xlabel('Iterations (per fifty)')
 	plt.show() #graphs the cost over time
 	
 	if testEnabled:
 		plt.plot(squeeze(fails))
 		plt.ylabel('Percentage of testing data that failed')
-		plt.xlabel('iterations (per hundreds)')
+		plt.xlabel('Iterations (per fifty)')
 		plt.show() #graphs the fail rate over time
 	return parameters
 
@@ -214,11 +213,11 @@ if "y" in save.lower(): #save the parameters
 	f = open(filename,"w")
 	for l in range(1,len(layers_dims)):
 		arr = parameters["W"+str(l)]
-		string = array2string(arr,threshold=110000000) #arbitrary number (it just had to be large)
+		string = array2string(arr,threshold=100000000) #arbitrary number (it just had to be large)
 		string = string.replace("\n",", ")
 		f.write(string+"\n")
 		arr = parameters["b"+str(l)]
-		string = array2string(arr,threshold=110000000)
+		string = array2string(arr,threshold=100000000)
 		string = string.replace("\n",", ")
 		f.write(string+"\n")
 	f.close()

@@ -31,7 +31,9 @@ PyAutoGUI==0.9.54
 These modules can all be installed using `pip install (module)` in the terminal
 
 ## Usage
-1. In order to use this repository, you must first clone it. You can use `gh repo clone Toby-Sanders-101/myDigits` in the terminal to do this.
+1. In order to use this repository, you must first clone it:
+    - To do this using the terminal, navigate to whichever directory you want it eg `cd Documents/Projects`, then run `git clone https://github.com/Toby-Sanders-101/myDigits.git`
+    - Or download the ZIP file and extract it to your chosen directory
 
 1. Then, assuming all modules and subsidiaries are installed correctly, you should confirm that your camera works sufficiently. You can run *dataMaker.py* with lines: 15, 30-37 and 44 commented out to do this. This will also output your camera dimensions.
 
@@ -39,10 +41,21 @@ These modules can all be installed using `pip install (module)` in the terminal
 
 1. Next, you may want to change: lines 16-19 in *myDigitsReaderHelp.py*; lines 11-12 in *myDigitsDNN.py* along with line 14 in *useMyDigitsReader.py*; or line 205 in *myDigitsDNN.py*. These changes will allow you to modify: the quality of the images processed; the number of possible predictions/outputs from the model and the ratio of testing data:training data; or the learning rate and number of iterations carried out by the network.
 
-1. Now that you've customised your files, you should run *dataMaker.py*. The first time you do this, it will create a file named *myDigits_(size).csv*. You will need to input the digit that you are taking photos of eg input 4 then you can proceed to take photos of the number 4 and it will collect the data. If you would like to take photos of letters or characters instead, you will need to alter some of the files to accommodate for this. This may include using a dictionary or array.
+1. Now that you've customised your files, you should run *dataMaker.py*. The first time you do this, it will create a file named *myDigits_(size).csv*. You will need to input the digit that you are taking photos of eg input 4, then you can proceed to take photos of the number 4 and it will collect the data. If you would like to take photos of letters or characters instead, you will need to alter some of the files to accommodate for this. This may include using a dictionary or array.
 
 1. Repeat this until the .csv file is sufficiently full of data.
 
 1. Next, run *myDigitsDNN.py*. This will create a file named *myParameters_(size).txt* to store the parameters. Chances are the network won't train very well the first time; you may need to change layer_dims, learning_rate, num_iterations or the amount/quality of training data in order to maximise the accuracy of the model.
 
 1. Once you've created a model that is of high enough standard, you can use *useMyDigitsReader.py* to test it with real world data. If it continues to work well, you can integrate the model into a larger program or just show it off to your other developer friends! (otherwise it's back to the drawing board).
+
+## Further reading
+3blue1brown neural network explanantion: [https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi](https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
+
+OpenCV Python Tutorial: [https://www.geeksforgeeks.org/opencv-python-tutorial/?ref=lbp](https://www.geeksforgeeks.org/opencv-python-tutorial/?ref=lbp)
+
+NumPy Tutorial: [https://www.geeksforgeeks.org/numpy-tutorial/?ref=lbp](https://www.geeksforgeeks.org/numpy-tutorial/?ref=lbp)
+
+Matplotlib Tutorial: [https://www.geeksforgeeks.org/matplotlib-tutorial/](https://www.geeksforgeeks.org/matplotlib-tutorial/)
+
+PyAutoGUI Documentation: [https://buildmedia.readthedocs.org/media/pdf/pyautogui/latest/pyautogui.pdf](https://buildmedia.readthedocs.org/media/pdf/pyautogui/latest/pyautogui.pdf)

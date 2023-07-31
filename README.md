@@ -31,8 +31,18 @@ PyAutoGUI==0.9.54
 These modules can all be installed using `pip install (module)` in the terminal
 
 ## Usage
-1. In order to use this repository, you must first clone it. You can use `gh repo clone Toby-Sanders-101/myDigits` in the terminal to do this
+1. In order to use this repository, you must first clone it. You can use `gh repo clone Toby-Sanders-101/myDigits` in the terminal to do this.
 
 1. Then, assuming all modules and subsidiaries are installed correctly, you should confirm that your camera works sufficiently. You can run *dataMaker.py* with lines: 15, 30-37 and 44 commented out to do this. This will also output your camera dimensions.
 
-1. Next, choose what 'quality drop' you would like to use and change lines 
+1. Next, choose what 'quality drop' you would like to use and change line 10 in *myDigitsReaderHelp.py* accordingly. Similarly, line 8 in *dataMaker.py*, lines 9 and 15-18 in *myDigitsDNN.py* and lines 8-9 in *useMyDigitsReader.py* may need to be altered.
+
+1. Next, you may want to change: lines 16-19 in *myDigitsReaderHelp.py*; lines 11-12 in *myDigitsDNN.py* along with line 14 in *useMyDigitsReader.py*; or line 205 in *myDigitsDNN.py*. These changes will allow you to modify: the quality of the images processed; the number of possible predictions/outputs from the model and the ratio of testing data:training data; or the learning rate and number of iterations carried out by the network.
+
+1. Now that you've customised your files, you should run *dataMaker.py*. The first time you do this, it will create a file named *myDigits_(size).csv*. You will need to input the digit that you are taking photos of eg input 4 then you can proceed to take photos of the number 4 and it will collect the data. If you would like to take photos of letters or characters instead, you will need to alter some of the files to accommodate for this. This may include using a dictionary or array.
+
+1. Repeat this until the .csv file is sufficiently full of data.
+
+1. Next, run *myDigitsDNN.py*. This will create a file named *myParameters_(size).txt* to store the parameters. Chances are the network won't train very well the first time; you may need to change layer_dims, learning_rate, num_iterations or the amount/quality of training data in order to maximise the accuracy of the model.
+
+1. Once you've created a model that is of high enough standard, you can use *useMyDigitsReader.py* to test it with real world data. If it continues to work well, you can integrate the model into a larger program or just show it off to your other developer friends! (otherwise it's back to the drawing board).

@@ -9,10 +9,8 @@ np.set_printoptions(linewidth=np.inf)
 n_layers = 3
 
 def getQD(size): #key for retrieving quality drop
-	if size=="120x80":
-		qd = 4
-	elif size=="40x27":
-		qd = 12
+	qdDict = {"40x27":12}
+	qd = qdDict[size]
 	return qd
 
 def shrinkData(inp,size): #reduces data size and quality

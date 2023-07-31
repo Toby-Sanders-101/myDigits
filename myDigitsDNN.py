@@ -154,7 +154,7 @@ def predict_L_layer(X,parameters): #makes predictions
 	prediction=argmax(AL,axis=0)
 	return prediction.reshape(1,prediction.shape[0])
 
-def L_layer_model(X, Y, layers_dims, learning_rate=0.01, num_iterations, print_cost=False): #this is the main program that trains the netowrk
+def L_layer_model(X, Y, layers_dims, learning_rate, num_iterations, print_cost): #this is the main program that trains the netowrk
 	random.seed(1)
 	costs = []
 	fails = []
@@ -202,7 +202,7 @@ def L_layer_model(X, Y, layers_dims, learning_rate=0.01, num_iterations, print_c
 		plt.show() #graphs the fail rate over time
 	return parameters
 
-parameters = L_layer_model(X_train, Y_train_, layers_dims, num_iterations = 50001, print_cost = True)
+parameters = L_layer_model(X_train, Y_train_, layers_dims, learning_rate=0.01, num_iterations = 50001, print_cost = True)
 
 #Test:
 predictions_train_L = predict_L_layer(X_train, parameters)
